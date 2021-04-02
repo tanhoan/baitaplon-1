@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<string>
+struct Quanli{
+	char ChonDoUong[50];
+	int SoLuong;
+	int GiaSanPham;
+	int ThanhTien;
+};
+void Nhap(struct Quanli &a ){
+	fflush(stdin);
+	printf ("\nMoi Khach Hang Muon Chon Do Uong : ");
+	gets(a.ChonDoUong);
+	printf ("\nSo Luong Do Uong Quy Khach Mong Muon la : ");
+	scanf("%d",&a.SoLuong);
+	printf("\nGia Cua Moi Do Uong La:");
+	scanf("%d",&a.GiaSanPham);
+	printf("\nTong So tien la :");
+	scanf("%d",&a.ThanhTien);
+}
+void Xuat(struct Quanli a){
+	printf ("\nLoai Do Uong Quy Khach Da Chon : %s", a.ChonDoUong);
+	printf("\nSo Luong Quy Khach Da Chon : %d ",a.SoLuong);
+	printf("\nGia Do Uong Quy khach Vua Chon La : %d",a.GiaSanPham);
+	printf("\nTong So Tien Ban Phai Tra La :%d", a.ThanhTien);
+}
+void NhapDS(Quanli a[], int &n){
+	for (int i=1; i<=n; i++){
+		printf("\nMat Hang thu %d la: ", i);
+		Nhap(a[i]);
+	}
+}
+void XuatDS(Quanli a[],int n){
+	for (int i=1; i<=n ; i++){
+		Xuat(a[i]);
+	}
+}
+void menu(){
+	printf("Moi quy khach lua Chon:\n");
+	printf("1. Cafe || 5.000");
+	printf("2. tra sua || 10.000");
+	printf("3. water || 3.000");
+}
+int main(){
+	struct Quanli a[50];
+	int n;
+	printf("\nNhap Loai Do Uong Can la : ");
+	scanf("%d",&n);
+	NhapDS(a,n);
+	XuatDS(a,n);
+}
+	
